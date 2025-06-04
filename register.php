@@ -1,9 +1,4 @@
 <?php
- /*
-  We will include config.php for connection with database.
-  We will get datas from index.php file, and inster them into database when Sign up button is clicked in index.php file.
-  If any of session is empty we will get a message
-  */
 
 	include_once('config.php');
 
