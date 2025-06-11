@@ -82,7 +82,7 @@
       <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" name="confirm_password">
       <label for="floatingPassword">Confirm Password</label>
     </div>
-
+	
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
