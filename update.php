@@ -9,7 +9,7 @@
 		$movie_name = $_POST['movie_name'];
 		$movie_desc = $_POST['movie_desc'];
 		$movie_quality = $_POST['movie_quality'];
-		  $movie_rating=$_POST['movie_rating'];
+		  $movie_rating=$_POST['movie_rating'];  
 		
 
 		$sql = "UPDATE movies SET id=:id,  movie_name=:movie_name, movie_desc=:movie_desc, movie_quality=:movie_quality,movie_rating=:movie_rating WHERE id=:id";
