@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <h1>Available Products</h1>
+        <div id="product-list"></div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchProducts();
+        });
+
+        function fetchProducts() {
+            fetch('http://localhost/shopping-website/backend/routes/products.php')
+                .then(response => response.json())
+                .then(data => {
+                    const productList = document.getElementById('product-list');
+                    productList.innerHTML = '';
+                    data.forEach(product => {
+                        const productItem = document.createElement('div');
+                        productItem.className = 'product-item';
+                        productItem.innerHTML = `
+                            <h2>${product.name}</h2>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <button onclick="addToCart(${product.id})">Add to Cart</button>
+                        `;
+                        productList.appendChild(productItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching products:', error));
+        }
+
+        function addToCart(productId) {
+            // Logic to add product to cart
+            console.log(`Product ${productId} added to cart`);
+        }
+    </script>
+</body>
+</html>
